@@ -7,8 +7,8 @@ R =[4*10**(-3), 5*10**(-3), 6*10**(-3), 6.5*10**(-3), 8*10**(-3), 9*10**(-3), 10
 plt.title("R en fonction de D")
 
 plt.plot(D,R, 'r+')
-plt.xlabel("D")
-plt.ylabel("R")
+plt.xlabel("D (m)")
+plt.ylabel("R (m)")
 ur = 1*10**(-3)
 plt.errorbar(D, R, xerr = 0, yerr = ur, fmt = 'o')
 plt.grid()
@@ -17,7 +17,7 @@ model = np.polyfit(D, R, 1)
 ymodel = model[0]*(np.array(D)) + model[1]
 
 b = 650*10**(-9) / model[0]
-print("b = ", b)
+print("b = ", b, "m")
 plt.plot(D, ymodel, 'b:')
 plt.show()
 
