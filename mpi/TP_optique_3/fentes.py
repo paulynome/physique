@@ -17,6 +17,7 @@ model = np.polyfit(D, R, 1)
 ymodel = model[0]*(np.array(D)) + model[1]
 
 b = 650*10**(-9) / model[0]
+print("lmd/D = ", model[0])
 print("b = ", b, "m")
 plt.plot(D, ymodel, 'b:')
 plt.show()
