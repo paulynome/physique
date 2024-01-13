@@ -25,4 +25,37 @@ plt.show()
 for i in range (9) : 
     Rreg = model[0] * D[i] 
     zscore = (R[i] - Rreg)/ur
-    print("zscore = ", zscore)
+    print("zscore = ", np.abs(zscore))
+
+
+# ================================= Monte-Carlo ===================================
+import numpy.random as rd
+  
+ 
+N= 10000
+lmd = 650 *(10**(-9)) #Longueur d'onde en cm
+ 
+# Calcul des N valeurs de b (écartement) à  partir des valeurs de lmd, D et R suivant une loi uniforme
+ 
+lmdMC = ( lmd + 0 * rd.uniform(-1, 1, N))
+DMC = (D[0] + 0 * rd.uniform(-1, 1, N))
+RMC = (R[0] + 1*(10**(-3)) *np.sqrt(3)* rd.uniform(-1, 1, N))
+ 
+bMC = np.abs((lmdMC*DMC)/(RMC))
+ 
+moy = np.average(bMC)
+it = np.std(bMC)
+ 
+print("La moyenne est ", moy," m")
+print("L'incertitude type est ", it," m")
+Zscore = np.abs((moy-60*10**(-6))/it)
+print("Zscore", Zscore)
+ 
+ 
+# Tracé de l'histogramme
+plt.hist(bMC, bins = 100, color ='#f5970a')
+plt.title("Histogramme de b (loi uniforme)")
+plt.xlabel("b (m)")
+plt.ylabel("")
+ 
+plt.show()
