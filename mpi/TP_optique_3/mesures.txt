@@ -1,0 +1,31 @@
+Laser : 40cm
+longueur d'onde : 650 nm
+taille fente : 60 µm
+D(cm) R(cm)
+80      0.4
+90      0.5
+100     0.6
+110     0.68
+120     0.8
+130     0.9
+140     1
+150     1.1
+160     1.25
+
+calculer zscore pour les fentes d'young
+
+
+Partie 2 :
+
+2i = 1.115 ms
+Tau = 6.5 ms
+
+6.5 ms -> 2048*14µm
+1.115 ms -> 2I µm 
+
+2i = 4.9mm
+
+lambda = 650 nm
+D = 138.6 - 46 cm = 92.6
+
+a = 0.245mm (en théorie 0.3 mm)
