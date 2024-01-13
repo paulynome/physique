@@ -42,7 +42,7 @@ lmdMC = ( lmd + 0 * rd.uniform(-1, 1, N))
 DMC = (D[0] + 0 * rd.uniform(-1, 1, N))
 RMC = (R[0] + 1*(10**(-3)) *np.sqrt(3)* rd.uniform(-1, 1, N))
  
-bMC = np.abs((lmdMC*DMC)/(RMC))
+bMC = (lmdMC*DMC)/(RMC)
  
 moy = np.average(bMC)
 it = np.std(bMC)
